@@ -1,0 +1,18 @@
+.button-edit {
+    margin-top: 20px;
+    font-size: 18px;
+    width: 70px;
+    height: 25px;
+    background-color: transparent;
+    border: 1px solid white;
+    color: white;
+    display: block;
+    cursor: pointer;
+  }
+  
+  @media screen and (max-width: 980px) {
+    .button-edit {
+      margin: 20px auto 0;
+    }
+  }
+  

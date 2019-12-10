@@ -1,0 +1,15 @@
+.error-message {
+    color: #FF3333;
+    font-size: 0.8em;
+    transition: .3s;
+    opacity: 0;
+  }
+
+.input-container__invalid .error-message {
+padding: 10px;
+opacity: 1;
+}
+
+.input-container__invalid .input__text {
+border-color: #FF3333;
+}

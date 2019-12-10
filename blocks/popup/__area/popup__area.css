@@ -1,0 +1,6 @@
+@import url('./__img/area__img.css');
+
+.popup__area {
+    position: relative;
+    box-sizing: border-box;
+}

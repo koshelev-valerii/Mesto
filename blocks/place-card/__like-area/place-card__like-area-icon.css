@@ -1,0 +1,9 @@
+@import url(./like/place-card__like-icon.css);
+@import url(./counter/place-card__like-counter-icon.css);
+
+.place-card__like-area-icon {
+    display: flex;
+    flex-direction: column;
+    border: none;
+    background: none;
+}

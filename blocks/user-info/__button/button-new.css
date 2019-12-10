@@ -1,0 +1,12 @@
+.button-new {
+  position: absolute;
+  top: 16px;
+  right: 0;
+}
+
+@media screen and (max-width: 980px) {
+  .button-new {
+    position: static;
+    margin-bottom: 40px;
+  }
+}

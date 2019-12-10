@@ -1,0 +1,18 @@
+.place-card__like-counter-icon {
+    width: 9px;
+    height: 13px;
+    align-self: center;
+    background: none;
+    margin: 0;
+    padding: 0;
+    border: none;
+    
+    font-family: Inter;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 13px;
+    line-height: 16px;
+    text-align: center;
+    
+    color: #000000;
+}
