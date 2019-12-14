@@ -16,5 +16,5 @@ Download and run:
   * __npm install__ (Windows)
   * __npm run dev__ (Windows)
 
-## Version 0.1.0
+## Version 0.1.1
 ----------------
