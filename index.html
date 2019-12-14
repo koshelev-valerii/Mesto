@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Mesto</title>
+  <link rel="stylesheet" href="style.1ac748384b03d434b195.css">
+</head>
+<body>
+  <div class="root">
+    <header class="header root__section">
+      <img src="./images/logo.svg" alt="mesto logo" class="logo">
+    </header>
+    <div class="profile root__section">
+      <div class="user-info">
+        <div class="user-info__photo button__popup button-avatar"></div>
+        <div class="user-info__data">
+          <h1 class="user-info__name"></h1>
+          <p class="user-info__job"></p>
+          <p class="user-info__id"></p>
+          <button class="button__popup button-edit">Edit</button>
+        </div>
+        <button class="button button__popup button-new">+</button>
+      </div>
+    </div>
+    <div class="places-list root__section">
+
+      <!-- Пример вёрстки карточки: -->
+
+      <!-- <div class="place-card">
+        <div class=" style="background-image: url(https://pictures.s3.yandex.net/frontend-developer/cards-compressed/kamchatka.jpg)">
+          <button class="place-card__delete-icon"></button>
+        </div>
+        <div class="place-card__description">
+          <h3 class="place-card__name">Камчатка</h3>
+          <button class="place-card__like-icon"></button>
+        </div>
+      </div> -->
+
+       <!-- конец примера. -->
+      
+    </div>
+    <div id="new" class="popup popup__new">
+      <div class="popup__content">
+        <img src="./images/close.svg" alt="" class="popup__close popup__close-new">
+        <h3 class="popup__title">Новое место</h3>
+        <form class="popup__form" novalidate name="new">
+          <div class="input-container">
+            <input id="name-img" type="text" required name="nameImg" maxlength="30" class="popup__input popup__input-new1" placeholder="Название">
+            <span id="error-name-img" class="error-message"></span>
+          </div>
+          <div class="input-container"> 
+            <input id="link" type="url" required name="link" class="popup__input popup__input-new2" placeholder="Ссылка на картинку">
+            <span id="error-link" class="error-message"></span>
+          </div>
+            <button type class="button popup__button popup__button-new">+</button>
+        </form>
+      </div>
+    </div>
+    <div id="edit" class="popup popup__edit">
+      <div class="popup__content">
+        <img src="./images/close.svg" alt="" class="popup__close popup__close-edit">
+        <h3 class="popup__title">Редактировать профиль</h3>
+        <form class="popup__form" novalidate name="edit" >
+          <div class="input-container"> 
+            <input id="name" type="text" required name="name" maxlength="30" class="popup__input popup__input-edit1 edit__name" placeholder="Имя">
+            <span id="error-name" class="error-message"></span>
+          </div>
+          <div class="input-container"> 
+            <input id="job" type="text" required name="job" maxlength="30" class="popup__input popup__input-edit2 edit__job" placeholder="О себе">
+            <span id="error-job" class="error-message"></span>
+          </div>
+            <button type class="button popup__button popup__button-edit" style="font-size: 18px;">Сохранить</button>
+        </form>
+      </div>
+    </div>
+    <div id="img" class="popup popup__img">
+      <div class="popup__area">
+        <img src="./images/close.svg" alt="" class="popup__close popup__close-img">
+      </div>
+    </div>
+    <div id="avatar" class="popup popup__avatar">
+      <div class="popup__content">
+          <img src="./images/close.svg" alt="" class="popup__close popup__close-avatar">
+          <h3 class="popup__title">Обновить аватар</h3>
+          <form class="popup__form" novalidate name="avatar">
+            <div class="input-container"> 
+              <input id="linkAvatar" type="url" required name="link" class="popup__input popup__input-avatar" placeholder="Ссылка на аватар">
+              <span id="error-linkAvatar" class="error-message"></span>
+            </div>
+            <button type class="button popup__button popup__button-avatar" style="font-size: 18px;">Сохранить</button>
+          </form>
+      </div>
+  </div>
+  <script type="module" src="main.bacc7a461c3ff1dbe484.js"></script>
+</body>
+</html>
