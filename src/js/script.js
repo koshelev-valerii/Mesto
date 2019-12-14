@@ -1,3 +1,35 @@
+import {placesList,
+        popupNew,
+        popupEdit,
+        popupAvatar,
+        img,
+        popupImg,
+        popupArea,
+        userName,
+        userJob,
+        userId,
+        userAvatar,
+        editName,
+        editJob,
+        buttonNew,
+        buttonEdit,
+        buttonAvatar,
+        inputNew1,
+        inputNew2,
+        inputEdit1,
+        inputEdit2,
+        inputAvatar,
+        inputNameImg,
+        inputLink,
+        inputName,
+        inputJob,
+        inputLinkAvatar,
+        partOfLink
+} from './constants'
+
+const serverUrl = NODE_ENV === 'development' ? 'http://praktikum.tk/cohort5' : 'https://praktikum.tk/cohort5';
+let userInfo = {};
+
 // Card
 class Card {
   constructor(item) {
@@ -83,7 +115,6 @@ class Card {
   }
 }
 
-
 // class CardList
 class CardList {
   constructor(container, arr) {
@@ -103,7 +134,7 @@ class CardList {
     this.container.appendChild(card.element);
   }
 }
-let newCardList = new CardList(placesList, []);
+export let newCardList = new CardList(placesList, []);
 
 
 //______________________________________________________________________________      // Api
@@ -196,15 +227,13 @@ class Api {
     .then(res => this.getResponseData(res));
   }
 }
-
-const api = new Api({
-  baseUrl: 'http://95.216.175.5/cohort5',
+export const api = new Api({
+  baseUrl: serverUrl,
   headers: {
     authorization: '68faebcb-beb2-4907-bee1-5dbbe259c717',
     'Content-Type': 'application/json'
   }
 });
-
 
 api.getInfo()
   .then((result) => {
@@ -216,8 +245,7 @@ api.getInfo()
   })
   .catch((err) => console.log(err));
 
-
-api.getInitialCards()
+  api.getInitialCards()
   .then((result) => {
     newCardList.render(result);
   })
@@ -235,7 +263,7 @@ function renderLoading(isLoading, button) {
   }
 };
 
-function editFormValue(e) {
+export function editFormValue(e) {
   e.preventDefault();
   renderLoading(true, buttonEdit);
   let Name = editName.value;
@@ -252,10 +280,9 @@ function editFormValue(e) {
   });
   return e;
 };
-formEdit.addEventListener('submit', editFormValue);
 
 
-function addNewCard(e) {
+export function addNewCard(e) {
   e.preventDefault();
   renderLoading(true, buttonNew);
   let name = inputNameImg.value;
@@ -273,7 +300,6 @@ function addNewCard(e) {
     });
   return e;
 };
-form.addEventListener('submit', addNewCard);
 
 function removeCard(idEl, el){
   api.deleteCard(idEl)
@@ -283,7 +309,7 @@ function removeCard(idEl, el){
     .catch((err) => console.log(err));
 }
 
-function changeAvatar(e) {
+export function changeAvatar(e) {
   e.preventDefault();
   renderLoading(true, buttonAvatar);
   let link = inputLinkAvatar.value;
@@ -298,7 +324,6 @@ function changeAvatar(e) {
     });
   return e;
 };
-formAvatar.addEventListener('submit', changeAvatar);
 
 
 function changeLike(el, result){
@@ -402,15 +427,10 @@ class EditAvatarPopup extends Popup {
   }
 }
 
-const popupEditProfile = new EditProfilePopup(popupEdit, 'popup_is-opened');
-const popupNewCard = new NewCardPopup(popupNew, 'popup_is-opened');
-const popupImgCard = new ImgPopup(popupImg, 'popup_is-opened');
-const popupEditAvatar = new EditAvatarPopup(popupAvatar, 'popup_is-opened');
-
-buttonAddNew.addEventListener('click', popupNewCard.open);
-editProfile.addEventListener('click', popupEditProfile.open);
-editAvatar.addEventListener('click', popupEditAvatar.open);
-document.addEventListener('click', popupImgCard.open);
+export const popupEditProfile = new EditProfilePopup(popupEdit, 'popup_is-opened');
+export const popupNewCard = new NewCardPopup(popupNew, 'popup_is-opened');
+export const popupImgCard = new ImgPopup(popupImg, 'popup_is-opened');
+export const popupEditAvatar = new EditAvatarPopup(popupAvatar, 'popup_is-opened');
 
 
 //______________________________________________________________________________      // ValidAll
@@ -454,7 +474,7 @@ class Activator {
   }
 }
 
-class ValidAll extends Activator {
+export class ValidAll extends Activator {
   validFormNew() {
     if (inputNameImg.value.length <= 1 || !partOfLink.test(inputLink.value) || inputLink.value.length <= 1) {
         super.disactivateButton(buttonNew);
@@ -502,7 +522,5 @@ class ValidAll extends Activator {
 
 
 }
-
-new ValidAll();
 
 //______________________________________________________________________________

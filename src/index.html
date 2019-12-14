@@ -5,18 +5,17 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Mesto</title>
-  <link rel="stylesheet" href="./pages/index.css">
+  <link rel="stylesheet" href="<%=htmlWebpackPlugin.files.chunks.main.css %>">
 </head>
 <body>
   <div class="root">
     <header class="header root__section">
-      <img src="./images/logo.svg" alt="mesto logo" class="logo">
+      <img src="<%=require('./images/logo.svg').default%>" alt="mesto logo" class="logo">
     </header>
     <div class="profile root__section">
       <div class="user-info">
         <div class="user-info__photo button__popup button-avatar"></div>
         <div class="user-info__data">
-            <!-- Jaques Causteau, Sailor, Researcher -->
           <h1 class="user-info__name"></h1>
           <p class="user-info__job"></p>
           <p class="user-info__id"></p>
@@ -44,7 +43,7 @@
     </div>
     <div id="new" class="popup popup__new">
       <div class="popup__content">
-        <img src="./images/close.svg" alt="" class="popup__close popup__close-new">
+        <img src="<%=require('./images/close.svg').default%>" alt="" class="popup__close popup__close-new">
         <h3 class="popup__title">Новое место</h3>
         <form class="popup__form" novalidate name="new">
           <div class="input-container">
@@ -61,7 +60,7 @@
     </div>
     <div id="edit" class="popup popup__edit">
       <div class="popup__content">
-        <img src="./images/close.svg" alt="" class="popup__close popup__close-edit">
+        <img src="<%=require('./images/close.svg').default%>" alt="" class="popup__close popup__close-edit">
         <h3 class="popup__title">Редактировать профиль</h3>
         <form class="popup__form" novalidate name="edit" >
           <div class="input-container"> 
@@ -78,12 +77,12 @@
     </div>
     <div id="img" class="popup popup__img">
       <div class="popup__area">
-        <img src="./images/close.svg" alt="" class="popup__close popup__close-img">
+        <img src="<%=require('./images/close.svg').default%>" alt="" class="popup__close popup__close-img">
       </div>
     </div>
     <div id="avatar" class="popup popup__avatar">
       <div class="popup__content">
-          <img src="./images/close.svg" alt="" class="popup__close popup__close-avatar">
+          <img src="<%=require('./images/close.svg').default%>" alt="" class="popup__close popup__close-avatar">
           <h3 class="popup__title">Обновить аватар</h3>
           <form class="popup__form" novalidate name="avatar">
             <div class="input-container"> 
@@ -94,7 +93,6 @@
           </form>
       </div>
   </div>
-  <script src="./js/constants.js"></script>
-  <script src="./js/script.js"></script>
+  <script type="module" src="<%= htmlWebpackPlugin.files.chunks.main.entry %>"></script>
 </body>
 </html>
